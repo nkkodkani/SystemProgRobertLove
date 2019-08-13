@@ -18,7 +18,7 @@ Major connectors of system programming:
 - C Lib
 - C Compiler
 
-System calls(syscalls)
+1. System calls(syscalls)
 
 - Functional invocation made from user space to kernel in order to request some service/resource from OS
 - Linux implements fewer system calls approx (300) compared to (1000s) on Windows
@@ -27,3 +27,15 @@ System calls(syscalls)
 - Application can then trap into the kernel through kernel well defined mechanism & execute only code that kernel allows it to execute
 - Exact mechanism varies from architecture to architecture
 Example: i386 => user space application execute software interrupt instruction "int" with the value of 0x80
+
+- Application tells kernel which syscalls to execute & with what parameters via maachine registers
+- syscalls are denoted by number starting at zero. On x386 architecture, if we request syscall 5 (open ()) user space application puts 5 in register eax before issuing int instruction
+- Parameter passing on i386 register is used for each possible parameter register in order of (ebx, eex, edx, esi and edi)
+- If syscall has more thab 5 parameters then single register is used to point a buffer in user space where all parameters are stored
+
+2. C Library (libc/ GNU -> glibc)
+
+- Heart of unix application
+- Even while programming in another language C lib is wrapped by higher level lib providing core services & facilate system call invocaton 
+
+glibc -> also provides wrapper for syscalls/thread support
