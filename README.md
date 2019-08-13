@@ -39,3 +39,9 @@ Example: i386 => user space application execute software interrupt instruction "
 - Even while programming in another language C lib is wrapped by higher level lib providing core services & facilate system call invocaton 
 
 glibc -> also provides wrapper for syscalls/thread support
+
+3. C Compiler (gcc)
+
+Compiler helps implement C standard and 
+
+APIs and ABIs
