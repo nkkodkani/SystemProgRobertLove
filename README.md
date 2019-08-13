@@ -57,3 +57,17 @@ ABI (Application Binary Interface)
 - Each machine architecture has its own ABI on linux
 - Thus ABI is function of both OS (linux) and architecture (x86)
 - ABIs are concerned with issues such as calling conventions, byte ordering, register use, system call invocation, linking, library behavior, and the binary object format. The call‐ ing convention, for example, defines how functions are invoked, how arguments are passed to functions, which registers are preserved and which are mangled, and how the caller retrieves the return value   
+
+Standard -> Linux aims towards compliance of two most important standards POSIX (Portable Operating System Interface) and SUS (Single Unix Specific)
+
+Files/Filesystem:
+
+- Linux: everything is file
+- In order to be accessed file must be first opened -> operations (read/write/both)
+- Open file -> referenced by unique desciptor mapping from metadat associated with open file back to specific file itself
+- Kernel has descriptor (handled by integer) -> known as file descriptor
+- Fds are shared with user space and used directlt by user program to access files
+
+
+
+
