@@ -42,6 +42,18 @@ glibc -> also provides wrapper for syscalls/thread support
 
 3. C Compiler (gcc)
 
-Compiler helps implement C standard and 
+Compiler helps implement C standard and system ABIs 
 
 APIs and ABIs
+
+API (Application Programming Interface)
+- Defines interface by which one piece of software communicates with another source level
+- Example: API is the interface defined by C standard & implemented by standard C Lib
+- Ensures source compatibility
+
+ABI (Application Binary Interface)
+- Ensures Binary compatibility guranteeing that piece of object code will function on any system with same ABI without requiring recompilation
+- ABI tied to architecture majority of API speaks machine specific concept - registers or assembly instructions
+- Each machine architecture has its own ABI on linux
+- Thus ABI is function of both OS (linux) and architecture (x86)
+- ABIs are concerned with issues such as calling conventions, byte ordering, register use, system call invocation, linking, library behavior, and the binary object format. The call‐ ing convention, for example, defines how functions are invoked, how arguments are passed to functions, which registers are preserved and which are mangled, and how the caller retrieves the return value   
