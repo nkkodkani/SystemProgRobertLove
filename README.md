@@ -66,7 +66,21 @@ Files/Filesystem:
 - In order to be accessed file must be first opened -> operations (read/write/both)
 - Open file -> referenced by unique desciptor mapping from metadat associated with open file back to specific file itself
 - Kernel has descriptor (handled by integer) -> known as file descriptor
-- Fds are shared with user space and used directlt by user program to access files
+- Fds are shared with user space and used directly by user program to access files
+
+Regular File:
+- Regular file contains byts of data organized into linear array called a byte stream
+- In Linux no further organization or formatting such as records is specified for a file
+- When file is first opened, file position is zero it is increased as bytes in file are read/written subsequently
+- File position can be set beyond EOF but it will cause padding of zeros after EOF & before file position
+- Maximum file length as with the max file position is bounded by limites of sizes of C type that linux kernel uses to manage file
+- A single file can be opened by different or same process multiple times. Open(open()) instance of file gives unique file descriptor
+- Kernel doesn't impose restriction on concurrent file access. Ordering rely on individual file operation
+- Although files are accesssed via filename they are not directly associated with such name instead referenced by inode -> integer value unique to file system and not whole system
+- Inode -> had inode number, modification timestamp, owner, type, length, location of file (BUT NO FILENAME is stored in inode)
+- Inode - Physical object located on disk + conceptual entity represented by data structure in Linux Kernel
+
+
 
 
 
