@@ -99,11 +99,22 @@ Hard Links
 - hardlink can be in same directory or 2 or more different directory
 - deleting a file involves unlinking from directory structure which is done by simply deleting its name and inode pair from directory
 - Filesystem cannot destroy inode and associated data on very unlink operation. WHat if it had link existed elsewhere in filesystem?
-- File is NOT destroyed untill all links to it are removed, inode contains a link count thaat keeps track of number of links within filesystem that points to it.
 - So only when link count is zero in the inode, then the associated data is actually removed from the filesystem
 
 Symbolic links
 
+- Hard links cannot span filesystems because an inode no is meaningless outside of inode's own fs - so to resolve this UNIX has symbolic link
+- Symbolic linlinked-to fileek looks like regular files
+- Symlink has its own inode and data chunck which contains complete pathname of linked-to-file
+- That means sym link can point anywhere even when files or directories that do not exists (broken link)
+- symlink has overhead - resolve inode of symlink & file linked to
+
+Special Files
+
+- Special files are kernel object that are represented as files
+- Linux supports four: block device files, character device files, named pipes and Unix domain sockes
+- Linux - this is bcse everything is a file so similar operations are performed on special files
+- 
 
 
 
