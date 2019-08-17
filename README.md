@@ -80,8 +80,11 @@ Regular File:
 - Inode -> had inode number, modification timestamp, owner, type, length, location of file (BUT NO FILENAME is stored in inode)
 - Inode - Physical object located on disk + conceptual entity represented by data structure in Linux Kernel
 
-# Directories & Links
-
+Directories & Links
+- Files are opened by name and node inode number in user space
+- Conceptually directories are viewed like a normal file with difference that it contains only mapping of name to inode 
+- Working: When usser space application requests to open a file, kernel opens a dirctory containing filename and searches for given name. From filename kernel obtains inode number from which inode structure is found. Inode contains metadata which includes ondisk location of file data
+- How does kernel know 
 
 
 
