@@ -95,9 +95,14 @@ Directories & Links
 
 Hard Links
 - When multiple links map different names to the same inode we call them hard links
-- 
+- Hardlink allow complex filesystem structure with multiple pathname point to the same data
+- hardlink can be in same directory or 2 or more different directory
+- deleting a file involves unlinking from directory structure which is done by simply deleting its name and inode pair from directory
+- Filesystem cannot destroy inode and associated data on very unlink operation. WHat if it had link existed elsewhere in filesystem?
+- File is NOT destroyed untill all links to it are removed, inode contains a link count thaat keeps track of number of links within filesystem that points to it.
+- So only when link count is zero in the inode, then the associated data is actually removed from the filesystem
 
-
+Symbolic links
 
 
 
