@@ -94,7 +94,8 @@ Directories & Links
 - Although directories are treated like normal files, kernel  does not allow them to be opened and manipulated like regular files instead they must be manipulated using special set of system calls. These system calls allow for the adding and removing of links. If user space were allowed to manipulate directories without kernel's mediation it would be too easy for a single simple error to correup he filesystem
 
 Hard Links
-- When multiple links
+- When multiple links map different names to the same inode we call them hard links
+- 
 
 
 
