@@ -83,8 +83,16 @@ Regular File:
 Directories & Links
 - Files are opened by name and node inode number in user space
 - Conceptually directories are viewed like a normal file with difference that it contains only mapping of name to inode 
-- Working: When usser space application requests to open a file, kernel opens a dirctory containing filename and searches for given name. From filename kernel obtains inode number from which inode structure is found. Inode contains metadata which includes ondisk location of file data
-- How does kernel know 
+- Working: When usser space application requests to open a file, kernel opens a dirctory containing filename and searches for given name. From filename kernel obtains inode number from which inode structure is found. Inode contains metadata of ondisk location of file data
+- How does kernel know which directory to look in to find a given filename? 
+- Initially theire is only one directory - "root" - path "/"
+- Directories similar to regular file have inode
+- Links inside directories can point to inode of other directories. It is kind of nests/hierarchy of directories  which allows for use of pathname
+- Working: a) Absolute Path(starts at ROOT): When kernel is asked to open a pathname "/home/blackboard/concode.png" it walks each directory entry (called dentry inside of kernel) in pathname to find inode of next entry. In example, it first gets inode / (root) then gets the inode of further directories. This operation is called as name path resolution.
+- Linux kernel employs cache - "Dentry Cache" - stores results of directory resolution providing speedier lookup in future
+- Relative Path (path at current directory) -> In relative path kernel starts name resolution from current directory
+
+
 
 
 
