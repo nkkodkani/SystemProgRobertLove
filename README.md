@@ -91,7 +91,10 @@ Directories & Links
 - Working: a) Absolute Path(starts at ROOT): When kernel is asked to open a pathname "/home/blackboard/concode.png" it walks each directory entry (called dentry inside of kernel) in pathname to find inode of next entry. In example, it first gets inode / (root) then gets the inode of further directories. This operation is called as name path resolution.
 - Linux kernel employs cache - "Dentry Cache" - stores results of directory resolution providing speedier lookup in future
 - Relative Path (path at current directory) -> In relative path kernel starts name resolution from current directory
+- Although directories are treated like normal files, kernel  does not allow them to be opened and manipulated like regular files instead they must be manipulated using special set of system calls. These system calls allow for the adding and removing of links. If user space were allowed to manipulate directories without kernel's mediation it would be too easy for a single simple error to correup he filesystem
 
+Hard Links
+- When multiple links
 
 
 
