@@ -80,6 +80,8 @@ Regular File:
 - Inode -> had inode number, modification timestamp, owner, type, length, location of file (BUT NO FILENAME is stored in inode)
 - Inode - Physical object located on disk + conceptual entity represented by data structure in Linux Kernel
 
+# Directories & Links
+
 
 
 
