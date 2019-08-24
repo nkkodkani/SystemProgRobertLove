@@ -122,7 +122,14 @@ Special Files
   
 - Block device:
   1. Accessed by array of bytes
-  2. The device driver maps the bytes over seekable device and user is free to access any valid bytes in the array, it might read byte 12, then byte 7, and then byte 12.
+  2. The device driver maps the bytes over seekable device and user is free to access any valid bytes in the array, it might read byte 12, then byte 7, and then byte 12
+  
+- Named pipes (FIFO)
+ 1. IPC mechanism that provides a communiction channel over a file descriptor accessed via a special file
+ 2. Regular pipes pipe output of one program to imput of another
+ 3. Named pipes are similar like  regular pipes but are accessed via a file called FIFO special file
+ 
+ 
 
 
 
