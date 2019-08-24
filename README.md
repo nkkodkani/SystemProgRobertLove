@@ -113,8 +113,16 @@ Special Files
 
 - Special files are kernel object that are represented as files
 - Linux supports four: block device files, character device files, named pipes and Unix domain sockes
-- Linux - this is bcse everything is a file so similar operations are performed on special files
-- 
+- Special files purpose => let certain abstraction fit into the file
+- Device accessed via device files and normal operations sunch as open/read/write/allow user spaces access and manipulate device
+- Character Device:
+  1. It is accessed by linear queue of bytes
+  2. Devide driver places bytes onto queue and user reads the bytes in order they are placed on queue
+  When new queue character is left read then device returns EOF
+  
+- Block device:
+  1. Accessed by array of bytes
+  2. The device driver maps the bytes over seekable device and user is free to access any valid bytes in the array, it might read byte 12, then byte 7, and then byte 12.
 
 
 
