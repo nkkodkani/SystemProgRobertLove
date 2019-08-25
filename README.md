@@ -141,7 +141,8 @@ Special Files
  
  - Process are object code in execution: active, running programs
  - More than object code - process consists of data, resources, state and virtualized computer
- - Processes begin life as executable object code which is maachine-runnable code in executable format that the kernel understands
+ - Processes begin life as executable object code which is maachine-runnable code in executable format that the kernel understands.
+ - Most common format in Linux - "Executable and Linkable Format (ELF)". Executable format contains metadata and multiple sections of code and data.
  
  
  
