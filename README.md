@@ -129,6 +129,25 @@ Special Files
  2. Regular pipes pipe output of one program to imput of another
  3. Named pipes are similar like  regular pipes but are accessed via a file called FIFO special file
  
+ Filesystem and namespaces:
+ 
+ - Filesystem is a collection of files and directories in a formal and valid hierarchy, they can be added/removed from global namespace of files and directories and these operations are called mounting and unmounting
+ - Filesystem usually exits physically but linux also supports virtual filesystem that exists only in memory and network filesystem that exists on machine across the network
+ - Smallest addressable unit on bloack device is sector. Sector is physical attribute of the device which comes in powers of tow with 512 being common. Block devive cannot transfer or access a unit of data smaller tha a sector and all I/O must occur in terms of one or more sectors
+ - Smallest logically addressable unit on the filesystem is the block. Block is the abstraction of the filesystem not on physical media.
+ - Linux, blocks are larger than sector but must be smaller than page size. Page size is smallest unit addressable by memory management unit a hardware component. Common block size are 512 bytes, 1 kb and 4 kb
+ 
+ Processes:
+ 
+ - Process are object code in execution: active, running programs
+ - More than object code - process consists of data, resources, state and virtualized computer
+ - Processes begin life as executable object code which is maachine-runnable code in executable format that the kernel understands
+ 
+ 
+ 
+ 
+ 
+ 
  
 
 
