@@ -142,7 +142,16 @@ Special Files
  - Process are object code in execution: active, running programs
  - More than object code - process consists of data, resources, state and virtualized computer
  - Processes begin life as executable object code which is maachine-runnable code in executable format that the kernel understands.
- - Most common format in Linux - "Executable and Linkable Format (ELF)". Executable format contains metadata and multiple sections of code and data.
+ - Most common format in Linux - "Executable and Linkable Format (ELF)". Executable format contains metadata and multiple sections of code and data
+ - Sections are linear chunkes of object code that load into linear chunks of memory
+ - Common sections => text, data and bss
+ - text section: contains executable code and read only data such as constant vaiable (read only & executable)
+ - data sections:  contains initialized data such as C variable with defined variables (readable writable)
+ - bss (block started by symbol): contains unitialized global data which by default are zero
+ - absolute section: contains non relocatable symbols
+ - undefined section: a catchall
+ 
+ 
  
  
  
