@@ -161,6 +161,14 @@ Special Files
  - Thread can be single/multithreaded, but most programs in unit are single threaded due to fast process creation in Unix
  - Linux kernel implements thread in accordance with posiz standards "glibc" - native posix thread lib
  
+ Process Hierarchy
+ 
+ - Process is identified by processID(pid), pid of 1st process is 1
+ - Linux follows concept of process tree. Process tree is rooted at 1st process known as init process which is init program
+ - Every process except 1st process has the parents. If the parent process terminates before child kernel will reparent the child to init process
+ - When process is terminated it is not immediately removed from system  instead kernel keeps part of process resident in memory to allow parent to inquire its state upon termination
+ - init process waits on all of its children to ensure that reparented process do not remain zombie forever
+ 
  
  
  
