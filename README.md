@@ -156,6 +156,10 @@ Special Files
  - Kernel manages this virtualization through hardware support provided by processor
  
  Threads:
+ - Each process consists of one or more thread of execution
+ - Thread is a unit of activity within process. It is the abstraction responsible for executing code & maintaining processes running stats
+ - Thread can be single/multithreaded, but most programs in unit are single threaded due to fast process creation in Unix
+ - Linux kernel implements thread in accordance with posiz standards "glibc" - native posix thread lib
  
  
  
