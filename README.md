@@ -150,6 +150,13 @@ Special Files
  - bss (block started by symbol): contains unitialized global data which by default are zero
  - absolute section: contains non relocatable symbols
  - undefined section: a catchall
+ - Process requests/manipulate resource through system calls (timers, pending signals, open files, network, connection, hardware &IPC mechanism)
+ - Process resources plus data + stats related to process are stored inside kernels process's process descriptor
+ - Linux supports both preemptive multitasking & virtualized nemory which provides both virtualized processor & virtualized view of memory. So it seems though it's alone is in control
+ - Kernel manages this virtualization through hardware support provided by processor
+ 
+ Threads:
+ 
  
  
  
